@@ -5,16 +5,13 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 
-
 public class SkyScraperTest {
     Skyscraper skyscraper;
-
 
     @Before
     public void before(){
         skyscraper = new Skyscraper("building", 30);
     }
-
 
     @Test
     public void hasType(){

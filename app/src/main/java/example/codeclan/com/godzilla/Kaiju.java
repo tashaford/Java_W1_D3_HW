@@ -4,16 +4,27 @@ import static android.R.attr.value;
 
 public abstract class Kaiju {
 
-    private String name;
-    private int healthValue;
+    public String name;
+    public int healthValue;
+    public int destructiveForce;
 
-    public Kaiju(String name, int healthValue) {
+    public Kaiju(String name, int healthValue, int destructiveForce) {
         this.name = name;
         this.healthValue = healthValue;
+        this.destructiveForce = destructiveForce;
     }
 
+    public String getName(){
+        return name;
+    }
 
+    public int getHealthValue() {
+        return healthValue;
+    }
 
+    public int getDestructiveForce() {
+        return destructiveForce;
+    }
 
 
 }

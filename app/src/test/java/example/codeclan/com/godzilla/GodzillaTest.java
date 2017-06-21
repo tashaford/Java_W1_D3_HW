@@ -6,10 +6,12 @@ import static org.junit.Assert.*;
 public class GodzillaTest {
 
     Godzilla godzilla;
+    Tank tank;
 
     @Before
     public void before(){
         godzilla = new Godzilla("Gary", 100, 50);
+        tank = new Tank("vehicle", 60);
     }
 
     @Test
@@ -19,16 +21,22 @@ public class GodzillaTest {
 
     @Test
     public void canRoar(){
-        assertEquals(godzilla.roar(), "Roooooaooooaaaaaaaaar!!!");
+        assertEquals("Roooooaooooaaaaaaaaar!!", godzilla.roar());
     }
 
     @Test
     public void canGetHealthValue(){
-        assertEquals(godzilla.getHealthValue(), 100);
+        assertEquals(100, godzilla.getHealthValue());
     }
 
     @Test
     public void canGetDestructiveForce(){
-        assertEquals(godzilla.getDestructiveForce(), 50);
+        assertEquals(50, godzilla.getDestructiveForce());
+    }
+
+    @Test
+    public void canAttack(){
+        godzilla.attack(tank);
+        assertEquals(10, tank.getHealthValue());
     }
 }
